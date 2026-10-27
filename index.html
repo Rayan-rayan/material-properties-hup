@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Material Properties Hub: Yield Strength, Tensile Strength &amp; Modulus of Metals</title>
+<meta name="description" content="Free reference of mechanical properties for 29 engineering metals: yield strength, tensile strength, elastic modulus, elongation, density and stress-strain curves for steel, stainless, aluminum, titanium and copper alloys.">
+<link rel="canonical" href="https://rayan-rayan.github.io/material-properties-hup/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Material Properties Hub">
+<meta property="og:title" content="Material Properties Hub: Yield Strength, Tensile Strength &amp; Modulus of Metals"><meta property="og:description" content="Free reference of mechanical properties for 29 engineering metals: yield strength, tensile strength, elastic modulus, elongation, density and stress-strain curves for steel, stainless, aluminum, titanium and copper alloys."><meta property="og:url" content="https://rayan-rayan.github.io/material-properties-hup/">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/style.css?v=795da158">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Material Properties Hub","url":"https://rayan-rayan.github.io/material-properties-hup/"}</script>
+
+</head>
+<body data-view="list" data-root="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="Material Properties Hub home"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 24 L10 9 C11 7 12.5 7 14 7.5 L24 9" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/><path d="M5 24 L24 24" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg><div><b>Material Properties Hub</b><span>Engineering metals reference</span></div></a>
+  <nav class="main" aria-label="Main"><a href="" aria-current="page">Materials</a><a href="compare/">Compare</a><a href="calculators/">Calculators</a><a href="unit-converter/">Unit converter</a></nav>
+  <div class="seg" role="group" aria-label="Unit system"><button type="button" data-units="SI" aria-pressed="true">SI</button><button type="button" data-units="US" aria-pressed="false">US</button></div>
+</div></header>
+<main class="wrap" id="app"><div class="intro"><div><h1>Mechanical properties of engineering metals</h1>
+    <p>Look up yield strength, tensile strength, elastic modulus and elongation for 29 common metals. Open a material for its stress–strain curve, or tick up to four to compare.</p></div></div>
+  <div class="index">
+    <aside class="panel" aria-label="Filters">
+      <div class="field"><label class="label" for="q">Search</label><input id="q" type="search" placeholder="6061, 4140, S30400…" value="" autocomplete="off"></div>
+      <div class="field"><span class="label">Material family</span><div class="chips"><button type="button" class="chip" data-cat="Carbon steel" aria-pressed="false">Carbon steel</button><button type="button" class="chip" data-cat="Alloy steel" aria-pressed="false">Alloy steel</button><button type="button" class="chip" data-cat="Stainless steel" aria-pressed="false">Stainless steel</button><button type="button" class="chip" data-cat="Aluminum" aria-pressed="false">Aluminum</button><button type="button" class="chip" data-cat="Titanium" aria-pressed="false">Titanium</button><button type="button" class="chip" data-cat="Copper alloy" aria-pressed="false">Copper alloy</button><button type="button" class="chip" data-cat="Cast iron" aria-pressed="false">Cast iron</button><button type="button" class="chip" data-cat="Nickel alloy" aria-pressed="false">Nickel alloy</button><button type="button" class="chip" data-cat="Magnesium" aria-pressed="false">Magnesium</button></div></div>
+      <div class="field"><label class="label" for="ymin">Yield strength at least</label><div class="unit-in"><input id="ymin" type="number" min="0" inputmode="decimal" placeholder="Any" value=""><em>MPa</em></div></div>
+      <div class="field"><label class="label" for="umin">Tensile strength at least</label><div class="unit-in"><input id="umin" type="number" min="0" inputmode="decimal" placeholder="Any" value=""><em>MPa</em></div></div>
+      <div class="field"><label class="label" for="dmax">Density at most</label><div class="unit-in"><input id="dmax" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Any" value=""><em>g/cm³</em></div></div>
+      <button type="button" class="linkbtn" data-act="clear-f">Clear all filters</button>
+    </aside>
+    <section style="min-width:0"><p class="count" id="count"></p><div class="tbl-wrap"><table id="tbl"><thead><tr><th style="width:36px"><span class="sr">Compare</span></th><th class="" aria-sort="none"><button type="button" data-sort="name">Material</button></th><th class="" aria-sort="ascending"><button type="button" data-sort="cat">Family ↑</button></th><th class="n" aria-sort="none"><button type="button" data-sort="sy">Yield <small>MPa</small></button></th><th class="n" aria-sort="none"><button type="button" data-sort="su">Tensile <small>MPa</small></button></th><th class="n" aria-sort="none"><button type="button" data-sort="E">Modulus E <small>GPa</small></button></th><th class="n" aria-sort="none"><button type="button" data-sort="el">Elong. <small>%</small></button></th><th class="n" aria-sort="none"><button type="button" data-sort="rho">Density <small>g/cm³</small></button></th></tr></thead><tbody><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-1018-cd" aria-label="Compare AISI 1018 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-1018-cd/">AISI 1018 Steel</a><span class="sub">Cold drawn, UNS G10180</span></td>
+    <td class="cat">Carbon steel</td><td class="n">370</td><td class="n">440</td><td class="n">205</td><td class="n">15</td><td class="n">7.87</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-1020-hr" aria-label="Compare AISI 1020 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-1020-hr/">AISI 1020 Steel</a><span class="sub">Hot rolled, UNS G10200</span></td>
+    <td class="cat">Carbon steel</td><td class="n">210</td><td class="n">380</td><td class="n">200</td><td class="n">25</td><td class="n">7.87</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-1045-cd" aria-label="Compare AISI 1045 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-1045-cd/">AISI 1045 Steel</a><span class="sub">Cold drawn, UNS G10450</span></td>
+    <td class="cat">Carbon steel</td><td class="n">530</td><td class="n">625</td><td class="n">205</td><td class="n">12</td><td class="n">7.87</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-1095-an" aria-label="Compare AISI 1095 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-1095-an/">AISI 1095 Steel</a><span class="sub">Annealed, UNS G10950</span></td>
+    <td class="cat">Carbon steel</td><td class="n">380</td><td class="n">655</td><td class="n">205</td><td class="n">13</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="astm-a36" aria-label="Compare ASTM A36 Steel"  ></td>
+    <td class="mat"><a href="materials/astm-a36/">ASTM A36 Steel</a><span class="sub">Hot rolled plate and shapes, UNS K02600</span></td>
+    <td class="cat">Carbon steel</td><td class="n">250</td><td class="n">450</td><td class="n">200</td><td class="n">23</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-4140-an" aria-label="Compare AISI 4140 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-4140-an/">AISI 4140 Steel</a><span class="sub">Annealed, UNS G41400</span></td>
+    <td class="cat">Alloy steel</td><td class="n">415</td><td class="n">655</td><td class="n">205</td><td class="n">26</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-4140-qt" aria-label="Compare AISI 4140 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-4140-qt/">AISI 4140 Steel</a><span class="sub">Quenched and tempered at 425 °C, UNS G41400</span></td>
+    <td class="cat">Alloy steel</td><td class="n">1,140</td><td class="n">1,250</td><td class="n">205</td><td class="n">13</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-4340-an" aria-label="Compare AISI 4340 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-4340-an/">AISI 4340 Steel</a><span class="sub">Annealed, UNS G43400</span></td>
+    <td class="cat">Alloy steel</td><td class="n">470</td><td class="n">745</td><td class="n">205</td><td class="n">22</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="aisi-4340-qt" aria-label="Compare AISI 4340 Steel"  ></td>
+    <td class="mat"><a href="materials/aisi-4340-qt/">AISI 4340 Steel</a><span class="sub">Quenched and tempered at 425 °C, UNS G43400</span></td>
+    <td class="cat">Alloy steel</td><td class="n">1,360</td><td class="n">1,470</td><td class="n">205</td><td class="n">10</td><td class="n">7.85</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ss-17-4ph" aria-label="Compare Stainless Steel 17-4 PH"  ></td>
+    <td class="mat"><a href="materials/ss-17-4ph/">Stainless Steel 17-4 PH</a><span class="sub">Condition H1025, UNS S17400</span></td>
+    <td class="cat">Stainless steel</td><td class="n">1,000</td><td class="n">1,070</td><td class="n">196</td><td class="n">12</td><td class="n">7.78</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ss-304" aria-label="Compare Stainless Steel 304"  ></td>
+    <td class="mat"><a href="materials/ss-304/">Stainless Steel 304</a><span class="sub">Annealed, UNS S30400</span></td>
+    <td class="cat">Stainless steel</td><td class="n">215</td><td class="n">505</td><td class="n">193</td><td class="n">70</td><td class="n">8.00</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ss-316" aria-label="Compare Stainless Steel 316"  ></td>
+    <td class="mat"><a href="materials/ss-316/">Stainless Steel 316</a><span class="sub">Annealed, UNS S31600</span></td>
+    <td class="cat">Stainless steel</td><td class="n">205</td><td class="n">515</td><td class="n">193</td><td class="n">60</td><td class="n">8.00</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ss-410" aria-label="Compare Stainless Steel 410"  ></td>
+    <td class="mat"><a href="materials/ss-410/">Stainless Steel 410</a><span class="sub">Annealed, UNS S41000</span></td>
+    <td class="cat">Stainless steel</td><td class="n">275</td><td class="n">485</td><td class="n">200</td><td class="n">20</td><td class="n">7.74</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-1100-h14" aria-label="Compare Aluminum 1100"  ></td>
+    <td class="mat"><a href="materials/al-1100-h14/">Aluminum 1100</a><span class="sub">H14 temper, UNS A91100</span></td>
+    <td class="cat">Aluminum</td><td class="n">115</td><td class="n">125</td><td class="n">69.0</td><td class="n">9</td><td class="n">2.71</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-2024-t3" aria-label="Compare Aluminum 2024"  ></td>
+    <td class="mat"><a href="materials/al-2024-t3/">Aluminum 2024</a><span class="sub">T3 temper, UNS A92024</span></td>
+    <td class="cat">Aluminum</td><td class="n">345</td><td class="n">483</td><td class="n">73.1</td><td class="n">18</td><td class="n">2.78</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-5052-h32" aria-label="Compare Aluminum 5052"  ></td>
+    <td class="mat"><a href="materials/al-5052-h32/">Aluminum 5052</a><span class="sub">H32 temper, UNS A95052</span></td>
+    <td class="cat">Aluminum</td><td class="n">193</td><td class="n">228</td><td class="n">70.3</td><td class="n">12</td><td class="n">2.68</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-6061-t6" aria-label="Compare Aluminum 6061"  ></td>
+    <td class="mat"><a href="materials/al-6061-t6/">Aluminum 6061</a><span class="sub">T6 temper, UNS A96061</span></td>
+    <td class="cat">Aluminum</td><td class="n">276</td><td class="n">310</td><td class="n">68.9</td><td class="n">12</td><td class="n">2.70</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-6063-t5" aria-label="Compare Aluminum 6063"  ></td>
+    <td class="mat"><a href="materials/al-6063-t5/">Aluminum 6063</a><span class="sub">T5 temper, UNS A96063</span></td>
+    <td class="cat">Aluminum</td><td class="n">145</td><td class="n">186</td><td class="n">68.9</td><td class="n">12</td><td class="n">2.70</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="al-7075-t6" aria-label="Compare Aluminum 7075"  ></td>
+    <td class="mat"><a href="materials/al-7075-t6/">Aluminum 7075</a><span class="sub">T6 temper, UNS A97075</span></td>
+    <td class="cat">Aluminum</td><td class="n">503</td><td class="n">572</td><td class="n">71.7</td><td class="n">11</td><td class="n">2.81</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ti-grade-2" aria-label="Compare Titanium Grade 2"  ></td>
+    <td class="mat"><a href="materials/ti-grade-2/">Titanium Grade 2</a><span class="sub">Commercially pure, annealed, UNS R50400</span></td>
+    <td class="cat">Titanium</td><td class="n">275</td><td class="n">345</td><td class="n">105</td><td class="n">20</td><td class="n">4.51</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ti-6al-4v" aria-label="Compare Titanium Ti-6Al-4V"  ></td>
+    <td class="mat"><a href="materials/ti-6al-4v/">Titanium Ti-6Al-4V</a><span class="sub">Grade 5, annealed, UNS R56400</span></td>
+    <td class="cat">Titanium</td><td class="n">880</td><td class="n">950</td><td class="n">114</td><td class="n">14</td><td class="n">4.43</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="cu-c26000" aria-label="Compare Cartridge Brass C26000"  ></td>
+    <td class="mat"><a href="materials/cu-c26000/">Cartridge Brass C26000</a><span class="sub">Annealed, UNS C26000</span></td>
+    <td class="cat">Copper alloy</td><td class="n">105</td><td class="n">325</td><td class="n">110</td><td class="n">62</td><td class="n">8.53</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="cu-c11000" aria-label="Compare Copper C11000 (ETP)"  ></td>
+    <td class="mat"><a href="materials/cu-c11000/">Copper C11000 (ETP)</a><span class="sub">Annealed, UNS C11000</span></td>
+    <td class="cat">Copper alloy</td><td class="n">69</td><td class="n">220</td><td class="n">115</td><td class="n">50</td><td class="n">8.89</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="cu-c36000" aria-label="Compare Free-Cutting Brass C36000"  ></td>
+    <td class="mat"><a href="materials/cu-c36000/">Free-Cutting Brass C36000</a><span class="sub">Half hard (H02), UNS C36000</span></td>
+    <td class="cat">Copper alloy</td><td class="n">310</td><td class="n">385</td><td class="n">97.0</td><td class="n">25</td><td class="n">8.50</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="cu-c51000" aria-label="Compare Phosphor Bronze C51000"  ></td>
+    <td class="mat"><a href="materials/cu-c51000/">Phosphor Bronze C51000</a><span class="sub">Hard (H04), UNS C51000</span></td>
+    <td class="cat">Copper alloy</td><td class="n">515</td><td class="n">560</td><td class="n">110</td><td class="n">10</td><td class="n">8.86</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ci-ductile-65" aria-label="Compare Ductile Iron 65-45-12"  ></td>
+    <td class="mat"><a href="materials/ci-ductile-65/">Ductile Iron 65-45-12</a><span class="sub">ASTM A536, UNS F33100</span></td>
+    <td class="cat">Cast iron</td><td class="n">310</td><td class="n">448</td><td class="n">169</td><td class="n">12</td><td class="n">7.10</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ci-gray-30" aria-label="Compare Gray Cast Iron Class 30"  ></td>
+    <td class="mat"><a href="materials/ci-gray-30/">Gray Cast Iron Class 30</a><span class="sub">ASTM A48, as cast, UNS F12401</span></td>
+    <td class="cat">Cast iron</td><td class="n"><span class="muted" title="No distinct yield point">—</span></td><td class="n">214</td><td class="n">100</td><td class="n">0.6</td><td class="n">7.15</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="ni-718" aria-label="Compare Inconel 718"  ></td>
+    <td class="mat"><a href="materials/ni-718/">Inconel 718</a><span class="sub">Solution treated and aged, UNS N07718</span></td>
+    <td class="cat">Nickel alloy</td><td class="n">1,035</td><td class="n">1,240</td><td class="n">200</td><td class="n">12</td><td class="n">8.19</td></tr><tr>
+    <td><input class="cb" type="checkbox" data-pick="mg-az31b" aria-label="Compare Magnesium AZ31B"  ></td>
+    <td class="mat"><a href="materials/mg-az31b/">Magnesium AZ31B</a><span class="sub">H24 sheet, UNS M11311</span></td>
+    <td class="cat">Magnesium</td><td class="n">220</td><td class="n">290</td><td class="n">45.0</td><td class="n">15</td><td class="n">1.77</td></tr></tbody></table></div></section>
+  </div>
+  <section class="card prose" style="margin-top:28px"><h2 style="margin-top:0">Popular comparisons</h2><div class="links"><a href="compare/al-6061-t6-vs-al-7075-t6/">Aluminum 6061 T6 vs Aluminum 7075 T6</a><a href="compare/aisi-1018-cd-vs-aisi-1045-cd/">AISI 1018 cold drawn vs AISI 1045 cold drawn</a><a href="compare/ss-304-vs-ss-316/">Stainless Steel 304 annealed vs Stainless Steel 316 annealed</a><a href="compare/aisi-4140-an-vs-aisi-4140-qt/">AISI 4140 annealed vs AISI 4140 Q&amp;T 425 °C</a><a href="compare/al-6061-t6-vs-ss-304/">Aluminum 6061 T6 vs Stainless Steel 304 annealed</a><a href="compare/ti-6al-4v-vs-al-7075-t6/">Titanium Ti-6Al-4V Grade 5, annealed vs Aluminum 7075 T6</a><a href="compare/aisi-1045-cd-vs-aisi-4140-an/">AISI 1045 cold drawn vs AISI 4140 annealed</a><a href="compare/al-6061-t6-vs-al-6063-t5/">Aluminum 6061 T6 vs Aluminum 6063 T5</a><a href="compare/al-2024-t3-vs-al-7075-t6/">Aluminum 2024 T3 vs Aluminum 7075 T6</a><a href="compare/aisi-4140-qt-vs-aisi-4340-qt/">AISI 4140 Q&amp;T 425 °C vs AISI 4340 Q&amp;T 425 °C</a><a href="compare/astm-a36-vs-aisi-1018-cd/">ASTM A36 Hot rolled plate and shapes vs AISI 1018 cold drawn</a><a href="compare/cu-c11000-vs-al-1100-h14/">Copper C11000 (ETP) annealed vs Aluminum 1100 H14</a></div></section></main>
+<div class="tray" id="tray" hidden></div>
+<footer><div class="wrap">
+  <p><b>About the data.</b> Values are typical room-temperature figures compiled from standard references (ASM Handbook, MatWeb, Shigley's Mechanical Engineering Design and ASTM specifications). Real values depend on product form, section size, heat treatment and supplier. Stress–strain curves are idealized from the tabulated values. Check the mill certificate or a design standard before final design.</p>
+  <nav aria-label="Site"><a href="about/">About</a><a href="contact/">Contact</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a><span>© 2026 Material Properties Hub</span></nav>
+</div></footer>
+<script src="assets/app.js?v=795da158" defer></script>
+</body>
+</html>

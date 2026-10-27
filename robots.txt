@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rayan-rayan.github.io/material-properties-hup/sitemap.xml
